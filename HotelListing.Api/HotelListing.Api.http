@@ -1,4 +1,38 @@
 @HotelListing.Api_HostAddress = https://localhost:7115
+@id = 7
+###
+
+GET {{HotelListing.Api_HostAddress}}/api/countries
+
+###
+
+POST {{HotelListing.Api_HostAddress}}/api/countries
+Content-Type: application/json
+
+{
+  "Name": "Test Country",
+  "ShortName": "TC"
+}
+
+###
+DELETE {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+
+###
+
+GET {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+
+###
+
+PUT {{HotelListing.Api_HostAddress}}/api/countries/{{id}}
+Content-Type: application/json
+
+{
+  "countryId": 7,
+  "Name": "Jamaica",
+  "ShortName": "JM"
+}
+
+###
 
 GET {{HotelListing.Api_HostAddress}}/api/hotels
 
@@ -8,19 +42,18 @@ POST {{HotelListing.Api_HostAddress}}/api/hotels
 Content-Type: application/json
 
 {
-  "id": 1,
-  "name": "Hotel A",
-  "address": "456 hjf",
-  "rating": 3.8
+  "Name": "Kullu Hotel",
+  "Address": "Neuro",
+  "Rating": 4.4,
+  "CountryId": 7
+
 }
 
 ###
 
-@id=2
 DELETE {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 
 ###
-
 GET {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 
 ###
@@ -29,7 +62,11 @@ PUT {{HotelListing.Api_HostAddress}}/api/hotels/{{id}}
 Content-Type: application/json
 
 {
-  //Hotel
+  "Id": 1,
+  "Name": "JW Marriott",
+  "Address": "Kolkata",
+  "Rating": 4.6,
+  "CountryId": 2
 }
 
 ###
